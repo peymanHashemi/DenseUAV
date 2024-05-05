@@ -44,7 +44,7 @@ def copy_file_or_tree(path, target_dir):
 def copyfiles2checkpoints(opt):
     dir_name = os.path.join('checkpoints', opt.name)
     if not os.path.isdir(dir_name):
-        os.mkdir(dir_name)
+        os.makedirs(dir_name, exist_ok = True)
     # record every run
     copy_file_or_tree('train.py', dir_name)
     copy_file_or_tree('test.py', dir_name)
