@@ -1,5 +1,5 @@
 name="baseline"
-root_dir="/data/datasets/crossview/DenseUAV/data_2022"
+root_dir="/data/datasets/crossview/DenseUAV/data_2022/data"
 data_dir=$root_dir/train
 test_dir=$root_dir/test
 gpu_ids=0
