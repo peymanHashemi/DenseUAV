@@ -5,7 +5,8 @@ import os
 import numpy as np
 from PIL import Image
 import glob
-
+import torch.multiprocessing
+torch.multiprocessing.set_sharing_strategy('file_system')
 
 class Dataloader_University(Dataset):
     def __init__(self, root, transforms, names=['satellite', 'drone']):
