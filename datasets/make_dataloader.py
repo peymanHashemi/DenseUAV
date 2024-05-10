@@ -3,7 +3,8 @@ from .Dataloader_University import Sampler_University, Dataloader_University, tr
 from .autoaugment import ImageNetPolicy
 import torch
 from .queryDataset import RotateAndCrop, RandomCrop, RandomErasing
-
+import torch.multiprocessing
+torch.multiprocessing.set_sharing_strategy('file_system')
 
 def make_dataset(opt):
     transform_train_list = []
