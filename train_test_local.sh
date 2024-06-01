@@ -1,5 +1,5 @@
 name="baseline"
-root_dir="/data/datasets/crossview/DenseUAV/data_2022/data"
+root_dir="/content/drive/MyDrive/google1"
 data_dir=$root_dir/train
 test_dir=$root_dir/test
 gpu_ids=0
@@ -22,7 +22,7 @@ ra="satellite"  # random affine
 re="satellite"  # random erasing
 cj="no"  # color jitter
 rr="uav"  # random rotate
-
+rs="uav"  #random scale
 python train.py --name $name --data_dir $data_dir --gpu_ids $gpu_ids --sample_num $sample_num \
                 --block $block --lr $lr --num_worker $num_worker --head $head  --head_pool $head_pool \
                 --num_bottleneck $num_bottleneck --backbone $backbone --h $h --w $w --batchsize $batchsize --load_from $load_from \
