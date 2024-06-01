@@ -2,7 +2,7 @@ from torchvision import transforms
 from .Dataloader_University import Sampler_University, Dataloader_University, train_collate_fn
 from .autoaugment import ImageNetPolicy
 import torch
-from .queryDataset import RotateAndCrop, RandomCrop, RandomErasing
+from .queryDataset import RotateAndCrop, RandomCrop, RandomErasing, RandomScale
 import torch.multiprocessing
 torch.multiprocessing.set_sharing_strategy('file_system')
 
@@ -29,7 +29,14 @@ def make_dataset(opt):
         transforms.Resize(size=(opt.h, opt.w),
                           interpolation=3),  # Image.BICUBIC
     ]
-
+    #random scalling
+    if "uav" in opt.rs:
+        transform_train_list = transform_train_list + \
+            [RandomScale()]
+    if "satellite" in opt.rs:
+        transform_satellite_list = transform_satellite_list + \
+            [RandomScale()]
+    
     if "uav" in opt.ra:
         transform_train_list = transform_train_list + \
             [transforms.RandomAffine(180)]
