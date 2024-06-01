@@ -37,6 +37,7 @@ def get_parse():
     parser.add_argument('--rr', default="", type=str, help='random rotate')
     parser.add_argument('--ra', default="", type=str, help='random affine')
     parser.add_argument('--re', default="", type=str, help='random erasing')
+    parser.add_argument('--rs', default="", type=str, help='random scalling')
     parser.add_argument('--cj', default="", type=str, help='color jitter')
     parser.add_argument('--erasing_p', default=0.3, type=float,
                         help='random erasing probability, in [0,1]')
